@@ -183,7 +183,8 @@ const modetheme = document.querySelector(".mode-options")!;
 //when dark mode div is clicked on, checks if current theme is dark, if so then theme will be set to light,
 // theme is then applied to the bodym then saved in local storage
 modetheme.addEventListener("click", () => {
-  const newTheme = theme === "dark" ? "light" : "dark";
+  const currentTheme = containerBody.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
   containerBody.setAttribute("data-theme", newTheme);
   localStorage.setItem("data-theme", newTheme);
 });
